@@ -2,6 +2,7 @@
   "name": "travel-budget",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "npm@9.8.1",
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "@react-spring/web": "^10.0.1",
