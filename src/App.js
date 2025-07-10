@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import TripDetailsPage from './pages/TripDetailsPage';
+import NotFoundPage from './pages/NotFoundPage';
+import About from './pages/About';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import './styles/App.css';
+import './styles/Header.css';
+import './styles/Footer.css';
+import './i18n'; // Import i18n configuration
+import LanguageProvider from './components/LanguageProvider';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
-function App() {
+const App = () => {
+  const [trip, setTrip] = useState(null);
+  const [expenses, setExpenses] = useState([]);
+  const [budget, setBudget] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LanguageProvider>
+      <div className="app-container">
+        <div className="area">
+          <ul className="circles">
+            {[...Array(10)].map((_, i) => <li key={i}></li>)}
+          </ul>
+        </div>
+        <Router>
+         
+          <Routes>
+            <Route path="/" element={<HomePage setTrip={setTrip} />} />
+            <Route
+              path="/trip/:code"
+              element={
+                <TripDetailsPage
+                  trip={trip}
+                  setTrip={setTrip}
+                  expenses={expenses}
+                  setExpenses={setExpenses}
+                  budget={budget}
+                  setBudget={setBudget}
+                />
+              }
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/not-found" element={<NotFoundPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Router>
+      </div>
+    </LanguageProvider>
   );
-}
+};
 
 export default App;

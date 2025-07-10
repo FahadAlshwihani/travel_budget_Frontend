@@ -1,0 +1,68 @@
+/* FileName: src/styles/About.css */
+.about-container {
+  max-width: 800px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+.about-intro {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.about-content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.about-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.about-list li {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.about-thanks {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.about-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-icon {
+  color: #ffd700;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #fff;
+}

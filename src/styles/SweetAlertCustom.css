@@ -1,0 +1,97 @@
+/* src/styles/SweetAlertCustom.css */
+.swal-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.swal-modal {
+    background: rgba(255, 255, 255, 0.15); /* More transparent */
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Optimize transitions */
+    transform: translateY(-20px); /* Start slightly above */
+    opacity: 0; /* Start invisible */
+}
+
+.swal-modal.show {
+    transform: translateY(0); /* Move to original position */
+    opacity: 1; /* Fade in */
+}
+
+.swal-title {
+    color: white;
+    margin-bottom: 1.5rem;
+    text-align: center; /* Center the title text */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.swal-text {
+    color: white; /* Text color for alert messages */
+    text-align: center; /* Center the alert message text */
+}
+
+.swal-button {
+    background-color: transparent; /* Remove background */
+    color: #007bff; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer; /* Change cursor to pointer */
+    margin: 0.5rem; /* Add margin for spacing */
+    display: block; /* Make buttons block elements */
+    width: 100%; /* Make buttons full width */
+    text-align: center; /* Center button text */
+}
+
+.swal-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly darken on hover */
+    color: #0056b3; /* Darker shade on hover */
+}
+
+.swal-button:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+/* Specific styles for the cancel button */
+.swal-button--cancel {
+    color: #dc3545; /* Red color for cancel button */
+}
+
+/* Specific styles for the confirm button */
+.swal-button--confirm {
+    color: #28a745; /* Green color for confirm button */
+}
+
+/* Custom styles for success alerts */
+.swal-modal.success {
+    background: rgba(0, 255, 0, 0.15); /* Light green background for success alerts */
+    border: 1px solid rgba(0, 255, 0, 0.5); /* Green border */
+}
+
+.swal-modal.success .swal-title,
+.swal-modal.success .swal-text {
+    color: white; /* Text color for success alerts */
+}
+
+/* Styles to make the success icon transparent */
+.swal-icon--success {
+    background-color: transparent; /* Remove background */
+    border: none; /* Remove border if any */
+    display: block; /* Center the icon */
+    margin: 0 auto; /* Center the icon horizontally */
+}
+
+/* Hide the pseudo-elements of the success icon */
+.swal-icon.swal-icon--success::before,
+.swal-icon.swal-icon--success::after {
+    display: none; /* Hide the pseudo-elements */
+}
+
+/* Hide the success icon's hide corners */
+.swal-icon--success__hide-corners {
+    display: none; /* Hide the hide corners element */
+}
