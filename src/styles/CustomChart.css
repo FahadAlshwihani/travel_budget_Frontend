@@ -1,0 +1,109 @@
+.ultra-chart-container {
+  position: relative;
+  width: 100%;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.glass-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.chart-title {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.recharts-cartesian-grid line {
+  shape-rendering: crispEdges;
+}
+
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to top, 
+    rgba(16, 10, 42, 0.8) 0%, 
+    transparent 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.floating-indicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 4;
+}
+
+.indicator {
+  position: absolute;
+  height: 4px;
+  width: 40px;
+  border-radius: 2px;
+  bottom: 0;
+  transform: translateX(-50%);
+  filter: blur(1px);
+  transition: all 0.3s ease;
+}
+
+.custom-tooltip {
+ background: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-category {
+  font-weight: bold;
+}
+.tooltip-value {
+  color: #333;
+}
+@media (max-width: 768px) {
+  .recharts-cartesian-grid-horizontal line {
+    stroke-dasharray: 2 2;
+  }
+}
+
+/* Existing desktop styles remain unchanged */
+
+/* Mobile-specific overrides */
+@media (max-width: 768px) {
+  .ultra-chart-container.mobile {
+    padding: 1rem;
+  }
+
+  .glass-container {
+    padding: 1rem;
+  }
+
+  .chart-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .recharts-bar {
+    rx: 4px; /* Rounder corners for mobile bars */
+  }
+
+  .recharts-cartesian-grid line {
+    stroke-dasharray: 2 2; /* Finer grid for mobile */
+  }
+}
+

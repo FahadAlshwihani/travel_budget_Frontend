@@ -1,0 +1,40 @@
+/* FileName: MultipleFiles/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Bootstrap CSS */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import './styles/SweetAlertCustom.css'; /* Added this line */
+
+/* Add RTL text alignment when needed */
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* Make sure toggles work for RTL bootstrap */
+[dir="rtl"] .dropdown-menu {
+  right: auto;
+  left: 0;
+  text-align: right;
+}
+
+   :root {
+     --bs-primary: #5c9cd8; /* Your custom blue instead of Bootstrap's */
+    }
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
